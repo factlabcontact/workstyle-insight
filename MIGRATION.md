@@ -30,8 +30,13 @@ Documentation: https://docs.github.com/en/pages/configuring-a-custom-domain-for-
 - GitHub account domain ownership: verified via DNS TXT
 - Cloudflare Worker custom domain binding removed; Worker deployment retained for rollback
 - Apex CNAME -> factlabcontact.github.io, DNS only
-- www CNAME -> factlabcontact.github.io, DNS only
+- www CNAME -> factlabcontact.github.io, Proxied; Cloudflare Single Redirect preserves path and query while redirecting to canonical HTTPS apex
 - Existing Google verification TXT retained
 - Original content HTTP 200 and byte identity verified after cutover
 
 If rollback is necessary, remove the apex CNAME and reattach workstyle-insight.tokyo under the retained Cloudflare Worker workstyle-insight > Domains > Add Domain. Verify DNS and HTTPS after any rollback.
+
+- GitHub Pages TLS certificate active; Enforce HTTPS enabled
+- HTTPS apex returns HTTP 200 with text/html; charset=utf-8 and original byte identity
+- HTTP apex redirects to HTTPS (301)
+- www HTTPS redirect verified against the new Cloudflare endpoint with certificate validation enabled; resolver caches may briefly retain earlier DNS answers

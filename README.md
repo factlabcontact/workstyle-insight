@@ -18,7 +18,9 @@ HTMLはUTF-8で保存し、`<meta charset="UTF-8">` を維持してください�
 ## ホスティング
 
 GitHub Pages: mainブランチのルートを公開。
-Cloudflare: DNS管理のみ。`@` と `www` は `factlabcontact.github.io` を指すCNAME（DNS only）。ルートのCNAMEはCloudflareによりフラット化されます。
+Cloudflare: DNS管理とwwwから正式URLへの転送。`@` は `factlabcontact.github.io` を指すCNAME（DNS only）。ルートのCNAMEはCloudflareによりフラット化されます。`www` は同じ接続先のCNAME（Proxied）で、Single Redirectによりパス・クエリを維持して `https://workstyle-insight.tokyo/` へ301転送します。本文はGitHub Pagesが配信します。
+
+HTTPS証明書とHTTPからHTTPSへの転送を有効化済みです。
 
 ## 新記事の公開
 
