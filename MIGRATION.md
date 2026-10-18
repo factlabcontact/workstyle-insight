@@ -23,3 +23,15 @@ Publish the main branch root through Settings > Pages. GitHub Pages serves the H
 5. Check the domain returns HTML, Japanese text renders correctly, and contact links work before retiring the old Pages project.
 
 Documentation: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+## Cutover changes
+
+- GitHub Pages custom domain: workstyle-insight.tokyo
+- GitHub account domain ownership: verified via DNS TXT
+- Cloudflare Worker custom domain binding removed; Worker deployment retained for rollback
+- Apex CNAME -> factlabcontact.github.io, DNS only
+- www CNAME -> factlabcontact.github.io, DNS only
+- Existing Google verification TXT retained
+- Original content HTTP 200 and byte identity verified after cutover
+
+If rollback is necessary, remove the apex CNAME and reattach workstyle-insight.tokyo under the retained Cloudflare Worker workstyle-insight > Domains > Add Domain. Verify DNS and HTTPS after any rollback.
