@@ -6,7 +6,9 @@ Repository: workstyle-insight
 
 ## Status
 
-The article is a draft. Keep the noindex meta until the owner has verified the biography, activity evidence, real testimonials and consent, operator details, and contact information. No testimonials have been invented.
+index.html preserves the pre-migration live article byte for byte. article-draft.html contains the proposed replacement and retains noindex until the owner verifies the biography, activity evidence, real testimonials and consent, operator details, and contact information. No testimonials have been invented.
+
+Original index.html SHA-256: 5412852e077e5c114305364aed58048993dabdc8b04efed346dd606335088e91
 
 ## Hosting
 
